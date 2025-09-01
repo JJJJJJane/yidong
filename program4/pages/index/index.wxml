@@ -1,0 +1,13 @@
+<video id='myVideo' src="{{src}}" controls enable-danmu danmu-btn></video>
+<!-- controls属性用于显示播放/暂停、音量等控制组件 -->
+<view class='danmuArea'>
+  <input type="text" placeholder="请输入弹幕内容"bindinput='getDanmu'></input>
+  <button bindtap='sendDanmu'>发送弹幕</button>
+</view>
+<view class='videoList'>
+  <view class='videoBar' wx:for='{{list}}' wx:key='video{{index}}' data-url='{{item.videoUrl}}' bindtap='playVideo'>
+  <!-- 一个大容器中包含着很多条bar：图片+标题 -->
+    <image src='/images/download.webp'></image>
+    <text>{{item.title}}</text>
+  </view>
+</view>
